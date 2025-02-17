@@ -19,7 +19,7 @@ def download_file(url, fileName) -> bool:
     if response.status_code != 200:
         return False
 
-    with open(fileName, 'w') as file:
+    with open(fileName, 'wb') as file:
         for chunk in response.iter_content(chunk_size=1024):
             file.write(chunk)
     print(f"Downloaded: {fileName}")

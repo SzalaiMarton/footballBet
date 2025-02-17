@@ -19,10 +19,18 @@ def main():
     window.mainloop()
 
 def getDataPressed():
+    hideError()
+    hideSuccess()
     if data.getData():
         showSuccess()
     else:
         showError()
+
+def hideError():
+    getDataFailed.grid_forget()
+
+def hideSuccess():
+    getDataSuccessful.grid_forget()
 
 def showError():
     getDataFailed.grid()
